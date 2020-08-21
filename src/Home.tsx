@@ -1,5 +1,6 @@
 import React from "react";
-import "./home.less";
+import "./assets/less/home.less";
+import Head from "./Head";
 
 export default class Home extends React.Component {
     constructor(props: any) {
@@ -7,6 +8,10 @@ export default class Home extends React.Component {
     }
 
     render() {
-        return <div>hello wold</div>;
+        return (
+            <div>
+                <Head />
+            </div>
+        );
     }
 }
