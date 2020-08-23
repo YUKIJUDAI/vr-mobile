@@ -1,0 +1,39 @@
+.search-page {  
+    background: url("../../static/img/search-bg.png") no-repeat top center;
+    background-size: 100%;
+    background-color: #0f233b;
+    min-height: 100vh;
+    .search-list {
+        padding-top: 4rem;
+        margin: 0 0.6rem;
+        .search-list-ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 29%;
+                margin: 0 0.1rem;
+                position: relative;
+                list-style: none;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                .zh,
+                .en {
+                    text-align: center;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    bottom: 0.5rem;
+                    font-size: 0.2rem;
+                    color: #fff;
+                    white-space: nowrap;
+                }
+                .en {
+                    bottom: 0.3rem;
+                }
+            }
+        }
+    }
+}

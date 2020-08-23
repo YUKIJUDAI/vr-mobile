@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    font-family: "微软雅黑";
+}
+
+
 @media (min-width: 360px) {
     html {
         font-size: 50px;
@@ -74,4 +84,17 @@
     html {
         font-size: 355.56px;
     }
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+}
+
+.clearfix {
+    *zoom: 1;
 }

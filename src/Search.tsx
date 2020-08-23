@@ -1,0 +1,60 @@
+import React from "react";
+import { createHashHistory } from "history";
+import "./assets/less/search.less";
+import Head from "./Head";
+import http from "./http/index";
+import qs from "qs";
+
+
+interface State {
+    searchList: Array<object>
+}
+
+const history = createHashHistory();
+
+export default class Search extends React.Component {
+    constructor(props: any) {
+        super(props);
+    }
+
+    readonly state: Readonly<State> = {
+        searchList: []
+    }
+
+    componentDidMount() {
+        const search = history.location.search;
+        const key = qs.parse(search.split("?")[1]).key;
+        this.getSearch(key as string);
+    }
+
+    getSearch = async (keywords: string) => {
+        var res: any = await http.post("http://me.amrtang.com/vr_photo/api/web/v1/resource/list", {
+            time: 1480576266,
+            token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+            authToken: "",
+            keywords
+        });
+        res.status === 1 && (this.setState({ searchList: res.data }));
+    }
+
+    render() {
+        return (
+            <div className="search-page">
+                <Head />
+                <div className="search-list">
+                    <ul className="search-list-ul">
+                        {
+                            this.state.searchList.map((item: any, i) => {
+                                return <li key={i}>
+                                    <img src={item.base_path + '/' + item.avatar_path} />
+                                    <p className="zh">{item.title}</p>
+                                    <p className="en">{item.title_en}</p>
+                                </li>
+                            })
+                        }
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+}

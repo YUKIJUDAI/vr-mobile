@@ -1,19 +1,88 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
+import { createHashHistory } from "history";
 import "./assets/less/head.less";
+
+interface State {
+    menuFlag: boolean,
+    searchFlag: boolean,
+    searchText: string
+}
+
+const history = createHashHistory();
 
 export default class Head extends React.Component {
     constructor(props: any) {
         super(props);
     }
 
+    componentDidMount() {
+        document.addEventListener("keyup", this.keyUp);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keyup", this.keyUp)
+    }
+
+    readonly state: Readonly<State> = {
+        menuFlag: false,
+        searchFlag: false,
+        searchText: ""
+    }
+
+    keyUp(e: KeyboardEvent) {
+        if (!this.state.searchFlag) return;
+        if (e && e.keyCode === 13) this.search();
+    }
+
+    changeMenuFlag = (val: boolean): any => {
+        this.setState({ menuFlag: val });
+    }
+
+    changeSearchFlag = (val: boolean): any => {
+        this.setState({ searchFlag: val });
+    }
+
+    changeSearchText = (e: ChangeEvent<HTMLInputElement>) => {
+        this.setState({ searchText: e.target.value });
+    }
+
+    search = () => {
+        if (this.state.searchText && this.state.searchText !== "") {
+            history.push("/search?key=" + this.state.searchText);
+        }
+    }
+
     render() {
         return <div className="head">
-            <img src={require("./static/img/head.png")} className="head-bg"/>
-            <div className="head-main">
-                <img src={require("./static/img/logo.png")} className="head-logo"/>
-                <img src={require("./static/img/search.png")} className="head-search"/>
-                <img src={require("./static/img/menu.png")} className="head-menu"/>
+            <div className="head-bg">
+                <div className="head-main clearfix">
+                    <img src={require("./static/img/logo.png")} className="head-logo" />
+                    {
+                        this.state.menuFlag
+                            ? <img src={require("./static/img/close.png")} className="head-close" onClick={this.changeMenuFlag.bind(this, false)} />
+                            : <img src={require("./static/img/menu.png")} className="head-menu" onClick={this.changeMenuFlag.bind(this, true)} />
+                    }
+                    <img src={require("./static/img/search.png")} className="head-search" onClick={this.changeSearchFlag.bind(this, true)} />
+                </div>
+                {
+                    this.state.searchFlag && <div className="search">
+                        <input type="text" className="search-input" value={this.state.searchText} onChange={this.changeSearchText.bind(this)} />
+                        <div className="search-close">
+                            <img src={require("./static/img/close.png")} onClick={this.changeSearchFlag.bind(this, false)} />
+                        </div>
+                    </div>
+                }
             </div>
+            {
+                this.state.menuFlag && <ul>
+                    <li>关于微创®</li>
+                    <li>微创®知行学院上海总部</li>
+                    <li>微创®知行学院苏州分布</li>
+                    <li>微创®线上知行学院</li>
+                    <li>专业教育</li>
+                </ul>
+            }
+
         </div>;
     }
 }
