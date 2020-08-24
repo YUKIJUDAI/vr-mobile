@@ -1,29 +1,24 @@
 import React from "react";
-import { createHashHistory } from "history";
 import "./assets/less/search.less";
 import Head from "./Head";
 import http from "./http/index";
 import qs from "qs";
 
-
 interface State {
-    searchList: Array<object>
+    searchList: Array<object>;
 }
 
-const history = createHashHistory();
-
-export default class Search extends React.Component {
+export default class Search extends React.Component<any, State, {}> {
     constructor(props: any) {
         super(props);
+
+        this.state = {
+            searchList: [],
+        };
     }
 
-    readonly state: Readonly<State> = {
-        searchList: []
-    }
-
-    componentDidMount() {
-        const search = history.location.search;
-        const key = qs.parse(search.split("?")[1]).key;
+    componentWillMount() {
+        const key = qs.parse(window.location.href.split("?")[1]).key;
         this.getSearch(key as string);
     }
 
@@ -32,10 +27,10 @@ export default class Search extends React.Component {
             time: 1480576266,
             token: "c92114bcc9e4454f1d2b7399dc9d62a9",
             authToken: "",
-            keywords
+            keywords,
         });
-        res.status === 1 && (this.setState({ searchList: res.data }));
-    }
+        res.status === 1 && this.setState({ searchList: res.data });
+    };
 
     render() {
         return (
@@ -43,15 +38,15 @@ export default class Search extends React.Component {
                 <Head />
                 <div className="search-list">
                     <ul className="search-list-ul">
-                        {
-                            this.state.searchList.map((item: any, i) => {
-                                return <li key={i}>
-                                    <img src={item.base_path + '/' + item.avatar_path} />
+                        {this.state.searchList.map((item: any, i) => {
+                            return (
+                                <li key={i}>
+                                    <img src={item.base_path + "/" + item.avatar_path} alt=""/>
                                     <p className="zh">{item.title}</p>
                                     <p className="en">{item.title_en}</p>
                                 </li>
-                            })
-                        }
+                            );
+                        })}
                     </ul>
                 </div>
             </div>
