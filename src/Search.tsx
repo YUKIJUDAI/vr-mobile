@@ -42,7 +42,7 @@ export default class Search extends React.Component<any, State, {}> {
                         {this.state.searchList.map((item: any, i) => {
                             return (
                                 <li key={i}>
-                                    <Link to={"/video?id=" + item.id}>
+                                    <Link to={"/video?id=" + item.id + "&navigate=" + item.navigate}>
                                         <img src={item.base_path + "/" + item.avatar_path} alt="" />
                                         <p className="zh">{item.title}</p>
                                         <p className="en">{item.title_en}</p>

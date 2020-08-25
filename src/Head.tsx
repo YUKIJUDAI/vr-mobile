@@ -56,7 +56,7 @@ export default class Head extends React.Component<any, State, {}> {
     render() {
         return (
             <div className="head">
-                <div className="head-bg">
+                <div className="head-bg"> 
                     <div className="head-main clearfix">
                         <img src={require("./static/img/logo.png")} className="head-logo" alt=""/>
                         {this.state.menuFlag ? <img src={require("./static/img/close.png")} className="head-close" onClick={this.changeMenuFlag.bind(this, false)} alt=""/> : <img src={require("./static/img/menu.png")} className="head-menu" onClick={this.changeMenuFlag.bind(this, true)} alt=""/>}
@@ -76,8 +76,8 @@ export default class Head extends React.Component<any, State, {}> {
                         <Link to={"/"}>
                             <li>关于微创®</li>
                         </Link>
-                        <a href="https://me.amrtang.com/vr_sh/"><li>微创®知行学院上海总部</li></a>
-                        <a href="https://me.amrtang.com/vr_sz/"><li>微创®知行学院苏州分布</li></a>
+                        <a href="http://me.amrtang.com/vr_sh/"><li>微创®知行学院上海总部</li></a>
+                        <a href="http://me.amrtang.com/vr_sz/"><li>微创®知行学院苏州分布</li></a>
                         <Link to={"/introduction?navigate=2"}><li>微创®线上知行学院</li></Link>
                         <Link to={"/introduction?navigate=3"}><li>专业教育</li></Link>
                     </ul>
