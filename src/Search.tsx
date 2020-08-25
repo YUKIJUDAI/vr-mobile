@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./assets/less/search.less";
 import Head from "./Head";
 import http from "./http/index";
@@ -41,9 +42,11 @@ export default class Search extends React.Component<any, State, {}> {
                         {this.state.searchList.map((item: any, i) => {
                             return (
                                 <li key={i}>
-                                    <img src={item.base_path + "/" + item.avatar_path} alt=""/>
-                                    <p className="zh">{item.title}</p>
-                                    <p className="en">{item.title_en}</p>
+                                    <Link to={"/video?id=" + item.id}>
+                                        <img src={item.base_path + "/" + item.avatar_path} alt="" />
+                                        <p className="zh">{item.title}</p>
+                                        <p className="en">{item.title_en}</p>
+                                    </Link>
                                 </li>
                             );
                         })}

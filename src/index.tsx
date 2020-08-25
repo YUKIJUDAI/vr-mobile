@@ -5,6 +5,7 @@ import "./assets/less/index.less";
 import Home from "./Home";
 import Search from "./Search";
 import Introduction from "./Introduction";
+import Video from "./Video.jsx";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
@@ -13,6 +14,7 @@ ReactDOM.render(
             <Route exact path="/" component={Home}></Route>
             <Route path="/search" component={Search}></Route>
             <Route path="/introduction" component={Introduction}></Route>
+            <Route path="/video" component={Video}></Route>
         </Switch>
     </HashRouter>,
     document.getElementById("root")
