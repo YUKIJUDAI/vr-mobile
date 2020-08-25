@@ -5,7 +5,7 @@ import "./assets/less/index.less";
 import Home from "./Home";
 import Search from "./Search";
 import Introduction from "./Introduction";
-import Video from "./Video.jsx";
+import Video from "./Video";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(

@@ -76,8 +76,8 @@ export default class Head extends React.Component<any, State, {}> {
                         <Link to={"/"}>
                             <li>关于微创®</li>
                         </Link>
-                        <a href="http://me.amrtang.com/vr_sh/"><li>微创®知行学院上海总部</li></a>
-                        <a href="http://me.amrtang.com/vr_sz/"><li>微创®知行学院苏州分布</li></a>
+                        <a href="https://me.amrtang.com/vr_sh/"><li>微创®知行学院上海总部</li></a>
+                        <a href="https://me.amrtang.com/vr_sz/"><li>微创®知行学院苏州分布</li></a>
                         <Link to={"/introduction?navigate=2"}><li>微创®线上知行学院</li></Link>
                         <Link to={"/introduction?navigate=3"}><li>专业教育</li></Link>
                     </ul>

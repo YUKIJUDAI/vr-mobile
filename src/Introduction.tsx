@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import qs from "qs";
 import Swiper from "swiper";
 import Head from "./Head";
@@ -66,7 +67,9 @@ export default class Introduction extends React.Component<any, State, {}> {
                             </p>
                         </div>
                         <div className="introduction-pic">
-                            <img src={this.state.introductionList[this.state.index].base_path + "/" + this.state.introductionList[this.state.index].video_big_path} alt="" />
+                            <Link to={"/video?id=" + this.state.introductionList[this.state.index].id}>
+                                <img src={this.state.introductionList[this.state.index].base_path + "/" + this.state.introductionList[this.state.index].video_big_path} alt="" />
+                            </Link>
                         </div>
                         <div className="introduction-info">
                             <p className="introduction-info-title">{this.state.navigate === "2" ? "微创®线上知行学院" : "专业教育"}</p>
@@ -82,7 +85,7 @@ export default class Introduction extends React.Component<any, State, {}> {
                                 return (
                                     <div className="swiper-slide" key={i}>
                                         <div className="swiper-li">
-                                            <img src={item.base_path + "/" + item.avatar_path} alt=""/>
+                                            <img src={item.base_path + "/" + item.avatar_path} alt="" />
                                             <p className="zh">{item.title}</p>
                                             <p className="en">{item.title_en}</p>
                                         </div>
