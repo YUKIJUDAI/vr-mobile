@@ -1,5 +1,5 @@
 import React from "react";
-import { createHashHistory } from "history";
+import { Link } from "react-router-dom";
 import qs from "qs";
 import Head from "./Head";
 import http from "./http/index";
@@ -10,8 +10,6 @@ interface State {
     videoInfo: { [propsName: string]: any };
     navigate: string | null;
 }
-
-const history = createHashHistory();
 
 export default class Introduction extends React.Component<any, State, {}> {
     constructor(props: any) {
@@ -41,10 +39,6 @@ export default class Introduction extends React.Component<any, State, {}> {
         }
     };
 
-    back = () => {
-        history.goBack();
-    }
-
     render() {
         return (
             <div className="introduction">
@@ -59,8 +53,10 @@ export default class Introduction extends React.Component<any, State, {}> {
                     <div className="introduction-pic">
                         <iframe src={this.state.videoInfo.href} allowFullScreen={true}></iframe>
                     </div>
-                    <div className="back" onClick={this.back.bind(this)}>
-                        <img src={require("./static/img/back.png")} alt="" />
+                    <div className="back">
+                        <Link to={"/"}>
+                            <img src={require("./static/img/back.png")} alt="" />
+                        </Link>
                     </div>
                 </div>
             </div>
