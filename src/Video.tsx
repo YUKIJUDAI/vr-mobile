@@ -8,7 +8,6 @@ import "./assets/less/introduction.less";
 
 interface State {
     videoInfo: { [propsName: string]: any };
-    navigate: string | null;
 }
 
 export default class Introduction extends React.Component<any, State, {}> {
@@ -16,8 +15,7 @@ export default class Introduction extends React.Component<any, State, {}> {
         super(props);
 
         this.state = {
-            videoInfo: {},
-            navigate: null
+            videoInfo: {}
         };
     }
     componentWillMount() {
@@ -46,7 +44,7 @@ export default class Introduction extends React.Component<any, State, {}> {
                 <div className="introduction-main">
                     <div className="introduction-title">
                         <p>
-                            {["微创®知行学院上海总部", "微创®知行学院苏州分布", "微创®线上知行学院", "专业教育"][+(this.state.navigate as string)]}
+                            {this.state.videoInfo.title}
                             <span> 介绍视频</span>
                         </p>
                     </div>

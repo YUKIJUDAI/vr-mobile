@@ -67,7 +67,7 @@ export default class Introduction extends React.Component<any, State, {}> {
                             </p>
                         </div>
                         <div className="introduction-pic">
-                            <Link to={"/video?id=" + this.state.introductionList[this.state.index].id + "&navigate=" + this.state.navigate}>
+                            <Link to={"/video?id=" + this.state.introductionList[this.state.index].id}>
                                 <img src={this.state.introductionList[this.state.index].base_path + "/" + this.state.introductionList[this.state.index].video_big_path} alt="" />
                             </Link>
                         </div>
