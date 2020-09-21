@@ -56,17 +56,17 @@ export default class Head extends React.Component<any, State, {}> {
     render() {
         return (
             <div className="head">
-                <div className="head-bg"> 
+                <div className="head-bg">
                     <div className="head-main clearfix">
-                        <img src={require("./static/img/logo.png")} className="head-logo" alt=""/>
-                        {this.state.menuFlag ? <img src={require("./static/img/close.png")} className="head-close" onClick={this.changeMenuFlag.bind(this, false)} alt=""/> : <img src={require("./static/img/menu.png")} className="head-menu" onClick={this.changeMenuFlag.bind(this, true)} alt=""/>}
-                        <img src={require("./static/img/search.png")} className="head-search" onClick={this.changeSearchFlag.bind(this, true)} alt=""/>
+                        <img src={require("./static/img/logo.png")} className="head-logo" alt="" />
+                        {this.state.menuFlag ? <img src={require("./static/img/close.png")} className="head-close" onClick={this.changeMenuFlag.bind(this, false)} alt="" /> : <img src={require("./static/img/menu.png")} className="head-menu" onClick={this.changeMenuFlag.bind(this, true)} alt="" />}
+                        <img src={require("./static/img/search.png")} className="head-search" onClick={this.changeSearchFlag.bind(this, true)} alt="" />
                     </div>
                     {this.state.searchFlag && (
                         <div className="search">
                             <input type="text" className="search-input" value={this.state.searchText} onChange={this.changeSearchText.bind(this)} />
                             <div className="search-close">
-                                <img src={require("./static/img/close.png")} onClick={this.changeSearchFlag.bind(this, false)} alt=""/>
+                                <img src={require("./static/img/close.png")} onClick={this.changeSearchFlag.bind(this, false)} alt="" />
                             </div>
                         </div>
                     )}
@@ -76,10 +76,33 @@ export default class Head extends React.Component<any, State, {}> {
                         <Link to={"/"}>
                             <li>关于微创®</li>
                         </Link>
-                        <a href="http://me.amrtang.com/vr_sh/"><li>微创®知行学院上海总部</li></a>
-                        <a href="http://me.amrtang.com/vr_sz/"><li>微创®知行学院苏州分布</li></a>
-                        <Link to={"/introduction?navigate=2"}><li>微创®线上知行学院</li></Link>
-                        <Link to={"/introduction?navigate=3"}><li>专业教育</li></Link>
+                        <a href="http://me.amrtang.com/vr_sh/">
+                            <li>微创®知行学院上海总部</li>
+                        </a>
+                        <a href="http://me.amrtang.com/vr_sz/">
+                            <li>微创®知行学院苏州分布</li>
+                        </a>
+                        <Link to={"/introduction?navigate=2"}>
+                            <li>微创®线上知行学院</li>
+                        </Link>
+                        <Link to={"/introduction?navigate=3"}>
+                            <li>专业教育</li>
+                        </Link>
+                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/cusi.pdf">
+                            <li>心脏猝死小科普</li>
+                        </a>
+                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/aed.pdf">
+                            <li>微创AED地图</li>
+                        </a>
+                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/app.pdf">
+                            <li>呼唤APP</li>
+                        </a>
+                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/peixun.pdf">
+                            <li>AED培训日程</li>
+                        </a>
+                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/fulu.pdf">
+                            <li>附录</li>
+                        </a>
                     </ul>
                 )}
             </div>
