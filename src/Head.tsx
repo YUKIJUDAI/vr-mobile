@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 import { createHashHistory } from "history";
+import { Accordion } from "antd-mobile";
 import "./assets/less/head.less";
 
 interface State {
@@ -88,21 +89,25 @@ export default class Head extends React.Component<any, State, {}> {
                         <Link to={"/introduction?navigate=3"}>
                             <li>专业教育</li>
                         </Link>
-                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/cusi.pdf">
-                            <li>心脏猝死小科普</li>
-                        </a>
-                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/aed.pdf">
-                            <li>微创AED地图</li>
-                        </a>
-                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/app.pdf">
-                            <li>呼唤APP</li>
-                        </a>
-                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/peixun.pdf">
-                            <li>AED培训日程</li>
-                        </a>
-                        <a href="http://me.amrtang.com/pdf_tool/js/web/viewer.html?file=pdf/fulu.pdf">
-                            <li>附录</li>
-                        </a>
+                        <Accordion>
+                            <Accordion.Panel header="AED">
+                                <a href="http://me.amrtang.com/vr_part/part1_m.html">
+                                    <li>心脏猝死小科普</li>
+                                </a>
+                                <a href="http://me.amrtang.com/vr_part/part2_m.html">
+                                    <li>微创AED地图</li>
+                                </a>
+                                <a href="http://me.amrtang.com/vr_part/part3_m.html">
+                                    <li>呼唤APP</li>
+                                </a>
+                                <a href="http://me.amrtang.com/vr_part/part4_m.html">
+                                    <li>AED培训日程</li>
+                                </a>
+                                <a href="http://me.amrtang.com/vr_part/part5_m.html">
+                                    <li>附录</li>
+                                </a>
+                            </Accordion.Panel>
+                        </Accordion>
                     </ul>
                 )}
             </div>
