@@ -6,7 +6,7 @@ import Home from "./Home";
 import Search from "./Search";
 import Introduction from "./Introduction";
 import Video from "./Video";
-import Pdf from "./Pdf.jsx";
+import Aed from "./Aed";
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -17,7 +17,7 @@ ReactDOM.render(
             <Route path="/search" component={Search}></Route>
             <Route path="/introduction" component={Introduction}></Route>
             <Route path="/video" component={Video}></Route>
-            <Route path="/pdf" component={Pdf}></Route>
+            <Route path="/aed" component={Aed}></Route>
         </Switch>
     </HashRouter>,
     document.getElementById("root")

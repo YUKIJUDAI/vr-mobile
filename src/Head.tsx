@@ -91,21 +91,21 @@ export default class Head extends React.Component<any, State, {}> {
                         </Link>
                         <Accordion>
                             <Accordion.Panel header="AED">
-                                <a href="http://me.amrtang.com/vr_part/part1_m.html">
+                                <Link to={"/aed?type=0"}>
                                     <li>心脏猝死小科普</li>
-                                </a>
-                                <a href="http://me.amrtang.com/vr_part/part2_m.html">
+                                </Link>
+                                <Link to={"/aed?type=1"}>
                                     <li>微创AED地图</li>
-                                </a>
-                                <a href="http://me.amrtang.com/vr_part/part3_m.html">
+                                </Link>
+                                <Link to={"/aed?type=2"}>
                                     <li>呼唤APP</li>
-                                </a>
-                                <a href="http://me.amrtang.com/vr_part/part4_m.html">
+                                </Link>
+                                <Link to={"/aed?type=3"}>
                                     <li>AED培训日程</li>
-                                </a>
-                                <a href="http://me.amrtang.com/vr_part/part5_m.html">
+                                </Link>
+                                <Link to={"/aed?type=4"}>
                                     <li>附录</li>
-                                </a>
+                                </Link>
                             </Accordion.Panel>
                         </Accordion>
                     </ul>
