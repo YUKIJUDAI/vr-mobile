@@ -103,7 +103,7 @@ export default class Head extends React.Component<any, State, {}> {
                                 <Link to={"/aed?type=3"} onClick={this.changeMenuFlag.bind(this, false)}>
                                     <li>AED培训日程</li>
                                 </Link>
-                                <Link to={"/video?id=4"} onClick={this.changeMenuFlag.bind(this, false)}>
+                                <Link to={"/video?id=25"} onClick={this.changeMenuFlag.bind(this, false)}>
                                     <li>AED宣传视频</li>
                                 </Link>
                                 <Link to={"/aed?type=4"} onClick={this.changeMenuFlag.bind(this, false)}>
