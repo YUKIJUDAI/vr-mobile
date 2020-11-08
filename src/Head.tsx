@@ -83,27 +83,30 @@ export default class Head extends React.Component<any, State, {}> {
                         <a href="http://me.amrtang.com/vr_sz/">
                             <li>微创®知行学院苏州分布</li>
                         </a>
-                        <Link to={"/introduction?navigate=2"}>
+                        <Link to={"/introduction?navigate=2"} onClick={this.changeMenuFlag.bind(this, false)}>
                             <li>微创®线上知行学院</li>
                         </Link>
-                        <Link to={"/introduction?navigate=3"}>
+                        <Link to={"/introduction?navigate=3"} onClick={this.changeMenuFlag.bind(this, false)}>
                             <li>专业教育</li>
                         </Link>
                         <Accordion>
                             <Accordion.Panel header="AED">
-                                <Link to={"/aed?type=0"}>
+                                <Link to={"/aed?type=0"} onClick={this.changeMenuFlag.bind(this, false)}>
                                     <li>心脏猝死小科普</li>
                                 </Link>
-                                <Link to={"/aed?type=1"}>
+                                <Link to={"/aed?type=1"} onClick={this.changeMenuFlag.bind(this, false)}>
                                     <li>微创AED地图</li>
                                 </Link>
-                                <Link to={"/aed?type=2"}>
+                                <Link to={"/aed?type=2"} onClick={this.changeMenuFlag.bind(this, false)}>
                                     <li>呼唤APP</li>
                                 </Link>
-                                <Link to={"/aed?type=3"}>
+                                <Link to={"/aed?type=3"} onClick={this.changeMenuFlag.bind(this, false)}>
                                     <li>AED培训日程</li>
                                 </Link>
-                                <Link to={"/aed?type=4"}>
+                                <Link to={"/video?id=4"} onClick={this.changeMenuFlag.bind(this, false)}>
+                                    <li>AED宣传视频</li>
+                                </Link>
+                                <Link to={"/aed?type=4"} onClick={this.changeMenuFlag.bind(this, false)}>
                                     <li>附录</li>
                                 </Link>
                             </Accordion.Panel>

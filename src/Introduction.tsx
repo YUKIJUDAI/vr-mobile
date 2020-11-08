@@ -28,6 +28,11 @@ export default class Introduction extends React.Component<any, State, {}> {
         const navigate = qs.parse(window.location.href.split("?")[1]).navigate;
         this.setState({ navigate: navigate as string });
         this.getIntroduction(navigate as string);
+        this.props.history.listen((route: any) => {
+            const navigate = qs.parse(window.location.href.split("?")[1]).navigate;
+            this.setState({ navigate: navigate as string });
+            this.getIntroduction(navigate as string);
+        });
     }
 
     mySwiper: any = null;
