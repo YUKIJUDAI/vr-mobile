@@ -4,7 +4,7 @@ import qs from "qs";
 // 创建新http
 
 const http = axios.create({
-    baseURL: "http://me.amrtang.com/vr_photo/api/web/v1/",
+    baseURL: "https://me.amrtang.com/vr_photo/api/web/v1/",
     timeout: 10000,
     headers: {
         "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
