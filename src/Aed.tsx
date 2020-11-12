@@ -36,7 +36,7 @@ class Aed extends Component<any, State> {
             <div id="aed">
                 <Head />
                 {this.state.flag && (
-                    <Carousel autoplay={false} style={{ height: "80vh", marginTop: "1.2rem" }} dots={false} selectedIndex={this.state.selectedIndex}>
+                    <Carousel autoplay={false} style={{ height: "83vh", marginTop: "1.2rem" }} dots={false} selectedIndex={this.state.selectedIndex}>
                         {new Array(this.imgArr[this.state.index]).fill("").map((item, i) => {
                             return <img key={i} src={require("./static/img/mp" + this.state.index + "/" + (i + 1) + ".png")} alt="" style={{ width: "100%", height: "100%", verticalAlign: "top" }} />;
                         })}

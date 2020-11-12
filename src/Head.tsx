@@ -90,7 +90,7 @@ export default class Head extends React.Component<any, State, {}> {
                             <li>专业教育</li>
                         </Link>
                         <Accordion>
-                            <Accordion.Panel header="AED">
+                            <Accordion.Panel header="AED生命长城">
                                 <Link to={"/aed?type=0"} onClick={this.changeMenuFlag.bind(this, false)}>
                                     <li>心脏猝死小科普</li>
                                 </Link>
