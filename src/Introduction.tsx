@@ -38,7 +38,7 @@ export default class Introduction extends React.Component<any, State, {}> {
     mySwiper: any = null;
 
     getIntroduction = async (navigate: string) => {
-        var res: any = await http.post("http://me.amrtang.com/vr_photo/api/web/v1/resource/list", {
+        var res: any = await http.post("https://me.amrtang.com/vr_photo/api/web/v1/resource/list", {
             time: 1480576266,
             token: "c92114bcc9e4454f1d2b7399dc9d62a9",
             authToken: "",
