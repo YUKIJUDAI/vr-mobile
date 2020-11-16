@@ -15,6 +15,7 @@ export default class Home extends React.Component {
                 <Head />
                 <div className="t">
                     <div className="top"><a href="http://me.amrtang.com/vr_sh/"></a></div>
+										<div className="top-right"><Link to={"/aed?type=0"}></Link></div>
                     <div className="left"><Link to={"/introduction?navigate=3"}></Link></div>
                     <div className="right"><Link to={"/introduction?navigate=2"}></Link></div>
                     <div className="bottom"><a href="http://me.amrtang.com/vr_sz/"></a></div>
