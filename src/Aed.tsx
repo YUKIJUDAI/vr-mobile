@@ -42,7 +42,6 @@ class Aed extends Component<any, State> {
                         })}
                     </Carousel>
                 )}
-
                 <div className="aed-list">
                     <ul>
                         {this.listArr.map((item, i) => {
