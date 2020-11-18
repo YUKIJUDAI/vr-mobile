@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Carousel } from "antd-mobile";
+import qs from "qs";
 
 import Head from "./Head";
 import "./assets/less/aed.less";
@@ -18,6 +19,11 @@ class Aed extends Component<any, State> {
             selectedIndex: 0,
             flag: true,
         };
+    }
+
+    componentWillMount() {
+        const type = qs.parse(window.location.href.split("?")[1]).type;
+        this.changeIndex(+(type as string));
     }
 
     listArr = [0, 1, 2, 3, 4];
