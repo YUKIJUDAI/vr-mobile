@@ -75,13 +75,13 @@ export default class Head extends React.Component<any, State, {}> {
                 {this.state.menuFlag && (
                     <ul>
                         <Link to={"/"}>
-                            <li>关于微创®</li>
+                            <li>关于微创®知行学院</li>
                         </Link>
                         <a href="http://me.amrtang.com/vr_sh/">
                             <li>微创®知行学院上海总部</li>
                         </a>
                         <a href="http://me.amrtang.com/vr_sz/">
-                            <li>微创®知行学院苏州分布</li>
+                            <li>微创®知行学院苏州分院</li>
                         </a>
                         <Link to={"/introduction?navigate=2"} onClick={this.changeMenuFlag.bind(this, false)}>
                             <li>微创®线上知行学院</li>
