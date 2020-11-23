@@ -21,7 +21,11 @@ class Aed extends Component<any, State> {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
+        this.props.history.listen(() => {
+            const type = qs.parse(window.location.href.split("?")[1]).type;
+            this.changeIndex(+(type as string));
+        });
         const type = qs.parse(window.location.href.split("?")[1]).type;
         this.changeIndex(+(type as string));
     }
@@ -80,6 +84,5 @@ class Aed extends Component<any, State> {
             </div>
         );
     }
-    componentDidMount() {}
 }
 export default Aed;
